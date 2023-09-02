@@ -22,12 +22,15 @@ const phonePattern = /^\d+$/;
 var nameInput = document.querySelector('#input-name');
 var emailInput = document.querySelector('#input-email');
 var phoneInput = document.querySelector('#input-phone');
+var contactForm = document.getElementsByClassName(".input-div-inner")[0];
 
 contactButton.addEventListener('click', function(){
     if (!namePattern.test(nameInput.value)) {
         console.log(nameInput.value);
         alert('Invalid name. It should contain 3-35 latin letters only!');
-        return;
+        contactForm.scrollIntoView();
+
+	    
     }
     if (!emailPattern.test(emailInput.value)) {
         alert('Invalid email!');
@@ -39,3 +42,4 @@ contactButton.addEventListener('click', function(){
     }
     alert("Email sent!");
 });
+
